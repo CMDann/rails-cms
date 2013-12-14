@@ -1,5 +1,7 @@
 RailsCms::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   #Root route
   root :to => "site#index"
 
