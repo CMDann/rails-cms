@@ -1,3 +1,3 @@
-class SitePages < ActiveRecord::Base
+class SitePage < ActiveRecord::Base
   attr_accessible :content, :title
 end

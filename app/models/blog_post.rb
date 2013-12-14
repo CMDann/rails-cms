@@ -1,3 +1,3 @@
-class BlogPosts < ActiveRecord::Base
+class BlogPost < ActiveRecord::Base
   attr_accessible :content, :title
 end

@@ -1,4 +1,11 @@
 RailsCms::Application.routes.draw do
+
+  #Root route
+  root :to => "site#index"
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
