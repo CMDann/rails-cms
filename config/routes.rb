@@ -5,6 +5,12 @@ RailsCms::Application.routes.draw do
   #Root route
   root :to => "site#index"
 
+  #Page route
+  match 'page/:id' => 'site#page', :as => 'page', :via => :get
+
+  #Post route
+  match 'post/:id' => 'site#post', :as => 'post', :via => :get
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
