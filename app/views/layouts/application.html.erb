@@ -10,7 +10,7 @@
 
 	<% categories = Category.all %>
 	<% pages      = SitePage.all %>
-  <% widgets    = Widget.all %>
+  <% widgets    = Widget.where('location' => 'sidebar') %>
 
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
@@ -82,11 +82,8 @@
         </div><!--/span-->
       </div><!--/row-->
 
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
+      <!-- Render the footer -->
+      <%= render 'footer/footer' %>
 
     </div><!--/.container-->
 

@@ -1,6 +1,6 @@
 <div class="post">
 	<h2><%= blog_post.title %></h2>
-	<p>Posted In: <span class="post_category"><%= blog_post.category.title %></span> On: <%= blog_post.updated_at %></p>
+	<p>Posted In: <span class="post_category"><%= link_to blog_post.category.title , category_path(:id => blog_post.category.id) %></span> On: <%= blog_post.created_at %></p>
 	<p></p>
 	<p><%= link_to "Read More", post_path(blog_post.id), :class => "product-btn btn btn-info" %></p>
 </div><!--/span-->
