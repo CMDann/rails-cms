@@ -3,6 +3,7 @@ ActiveAdmin.register BlogPost do
   form do |f|
     f.inputs do
       f.input :title
+      f.input :category
       f.input :content, :as => :ckeditor
     end
     f.buttons
