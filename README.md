@@ -85,6 +85,12 @@ The default directory structure of a generated Ruby on Rails application:
 Change Log
 ==========
 <pre>
+12.14.2013 - Added categories for posts
+           - Added bootstrap theme
+           - Added category resources to active admin
+           - Added search functionality
+           - Added post and pages routes and views
+
 12.13.2013 - Added initial rails files
            - Added gems that will be used
            - Configured active admin to manage posts and pages
