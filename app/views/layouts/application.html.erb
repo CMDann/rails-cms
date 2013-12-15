@@ -10,6 +10,7 @@
 
 	<% categories = Category.all %>
 	<% pages      = SitePage.all %>
+  <% widgets    = Widget.all %>
 
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
@@ -62,6 +63,22 @@
             	<%= link_to category.title , category_path(:id => category.id), :class=>"list-group-item" %>
           	<% end %>
           </div>
+
+        <div class="col-lg-4">
+        <% widgets.each do |widget| %>
+          <div class="panel panel-primary side-bar-panel">
+            <% if widget.title %>
+              <div class="panel-heading">
+                <h3 class="panel-title"><%= widget.title %></h3>
+              </div>
+            <% end %>
+              <div class="panel-body">
+                <%= raw(widget.content) %>
+              </div>
+            </div>
+          
+        <% end %>
+        </div>
         </div><!--/span-->
       </div><!--/row-->
 

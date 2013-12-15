@@ -18,7 +18,7 @@ class SiteController < ApplicationController
 
   def category
     @category   = Category.find(params[:id])
-    @blog_posts = BlogPost.first(:category_id => params[:id]).page(params[:page])
+    @blog_posts = BlogPost.where(:category_id => params[:id])
   end
 
   def search_results
