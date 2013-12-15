@@ -1,5 +1,33 @@
 <div class="jumbotron">
-<h1><%= @blog_post.title %></h1>
-<p>Posted In: <span class="post_category"><%= link_to @blog_post.category.title , category_path(:id => @blog_post.category.id) %></span> On: <%= @blog_post.updated_at %></p>
-<p><%= raw(@blog_post.content) %></p>
+	<h1><%= @blog_post.title %></h1>
+	<p>Posted In: <span class="post_category"><%= link_to @blog_post.category.title , category_path(:id => @blog_post.category.id) %></span> On: <%= @blog_post.updated_at %></p>
+	<p><%= raw(@blog_post.content) %></p>
 </div>
+
+<!-- Random Posts -->
+<h3>More from CMDann.ca</h2>
+<% @rand_record.each do |random_post| %>
+<div class="col-6 col-sm-6 col-lg-4">
+	<h2><%= random_post.title %></h2>
+	<p>Posted In: <span class="post_category"><%= random_post.category.title %></span> On: <%= random_post.updated_at %></p>
+	<p></p>
+	<p><%= link_to "Read More", post_path(random_post.id), :class => "product-btn btn btn-info" %></p>
+</div><!--/span-->
+<% end %>  
+
+<!-- Comments -->
+<h3>What do you think?</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'cmdannca'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>

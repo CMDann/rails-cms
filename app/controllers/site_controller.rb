@@ -10,11 +10,15 @@ class SiteController < ApplicationController
 
   def post
     @blog_post = BlogPost.find(params[:id])
+
+    offset = rand(BlogPost.count)
+    @rand_record = BlogPost.order(:offset => offset).limit(3)
+
   end
 
   def category
     @category   = Category.find(params[:id])
-    @blog_posts = BlogPost.where(:category_id => params[:id]).page(params[:page])
+    @blog_posts = BlogPost.first(:category_id => params[:id]).page(params[:page])
   end
 
   def search_results
