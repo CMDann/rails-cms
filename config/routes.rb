@@ -11,6 +11,9 @@ RailsCms::Application.routes.draw do
   #Post route
   match 'post/:id' => 'site#post', :as => 'post', :via => :get
 
+  #Search
+  match 'search_results' => 'site#search_results', :as => 'search_results'#, :via => :post
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
