@@ -14,6 +14,9 @@ RailsCms::Application.routes.draw do
   #Search
   match 'search_results' => 'site#search_results', :as => 'search_results'#, :via => :post
 
+  #category page
+  match 'category/:id' => 'site#category', :as => 'category', :via => :get
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

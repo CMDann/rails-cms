@@ -20,13 +20,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <%= link_to "CMDann.ca", root_path, :class => "navbar-brand" %>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <% pages.each do |page| %>
+              <li><%= link_to page.title , page_path(:id => page.id) %></li>
+            <% end %>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
@@ -59,8 +59,8 @@
           <div class="list-group">
             <a href="#" class="list-group-item active">Categories:</a>
             <% categories.each do |category| %>
-            	<p><%= category.title %></p>
-            <% end %>
+            	<%= link_to category.title , category_path(:id => category.id), :class=>"list-group-item" %>
+          	<% end %>
           </div>
         </div><!--/span-->
       </div><!--/row-->

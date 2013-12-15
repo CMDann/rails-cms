@@ -1,0 +1,12 @@
+<h1><%= @category.title %></h1>
+<p>Displaying <%= pluralize(@blog_posts.count, 'result') %></p>
+
+<% if @blog_posts.empty? %>
+    <div class="jumbotron">
+       	<h1>No products are in this category!</h1>
+        <p>The category you searched for has no posts in it!</p>
+        <p><%= link_to 'Take me home!', root_path, :class => "btn btn-lg btn-danger" %></p>
+    </div>
+<% end %>
+
+<%= render @blog_posts %>

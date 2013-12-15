@@ -12,6 +12,11 @@ class SiteController < ApplicationController
     @blog_post = BlogPost.find(params[:id])
   end
 
+  def category
+    @category   = Category.find(params[:id])
+    @blog_posts = BlogPost.where(:category_id => params[:id]).page(params[:page])
+  end
+
   def search_results
     # Trying to implement category search
     @category = Category.where("title LIKE ?", "%#{params[:keywords]}%")
