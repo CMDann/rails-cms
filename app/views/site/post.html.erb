@@ -1,4 +1,7 @@
 <div class="jumbotron">
+    <% if @blog_post.image_file_name %>
+        <p class="featured_image"><%= image_tag @blog_post.image.url(:featured) %></p>
+    <% end %>
 	<h1><%= @blog_post.title %></h1>
 	<p>Posted In: <span class="post_category"><%= link_to @blog_post.category.title , category_path(:id => @blog_post.category.id) %></span> On: <%= @blog_post.created_at %></p>
 	<p><%= raw(@blog_post.content) %></p>
