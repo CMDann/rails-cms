@@ -85,6 +85,15 @@ The default directory structure of a generated Ruby on Rails application:
 Change Log
 ==========
 <pre>
+12.16.2013 - Configured paperclip
+           - Added featured images, thumbnails, and medium sized images for posts
+
+12.15.2013 - Added widgets to sidebar, added widget resource to active admin
+           - Added widget locations, added links and created footer partial
+           - Configured CKEdior for widgets
+           - Added disqus commenting to post pages
+           - Added random blog posts to each post at bottom
+
 12.14.2013 - Added categories for posts
            - Added bootstrap theme
            - Added category resources to active admin
