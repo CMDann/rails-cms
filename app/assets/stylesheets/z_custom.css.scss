@@ -4,3 +4,18 @@
 	margin-left: -15px;
 }
 
+.post{
+	.featured_image_thumb{
+		width: 10%;
+		float: left;
+	}
+
+	.excerpt{
+		width: 85%;
+		float: right;
+	}
+
+	.read_more{
+		clear: both;
+	}
+}

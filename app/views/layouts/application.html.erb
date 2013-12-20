@@ -25,6 +25,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            <li><%= link_to "Blog", blog_path %></li>
             <% pages.each do |page| %>
               <li><%= link_to page.title , page_path(:id => page.id) %></li>
             <% end %>
