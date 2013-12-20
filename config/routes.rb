@@ -17,6 +17,9 @@ RailsCms::Application.routes.draw do
   #category page
   match 'category/:id' => 'site#category', :as => 'category', :via => :get
 
+  #Blog route
+  match 'blog' => 'site#blog', :as => 'blog', :via => :get
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

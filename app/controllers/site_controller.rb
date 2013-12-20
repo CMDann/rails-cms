@@ -1,7 +1,7 @@
 class SiteController < ApplicationController
 
   def index #The main site index in app/views/site
-    @BlogPosts = BlogPost.order('id DESC').limit(5)
+    @BlogPosts = BlogPost.order('id DESC').limit(5).page(params[:page]).per(5)
   end
 
   def page
@@ -18,7 +18,7 @@ class SiteController < ApplicationController
 
   def category
     @category   = Category.find(params[:id])
-    @blog_posts = BlogPost.where(:category_id => params[:id])
+    @blog_posts = BlogPost.where(:category_id => params[:id]).page(params[:page])
   end
 
   def search_results
@@ -32,6 +32,10 @@ class SiteController < ApplicationController
       @results = BlogPost.where("title LIKE ? OR content LIKE ? OR category_id LIKE ?", 
                                 "%#{params[:keywords]}%", "%#{params[:keywords]}%", "%#{@category.first.id}%").page(params[:page])
     end
+  end
+
+  def blog
+    @BlogPosts = BlogPost.order('id DESC').page(params[:page])
   end
 
 end
