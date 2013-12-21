@@ -85,6 +85,12 @@ The default directory structure of a generated Ruby on Rails application:
 Change Log
 ==========
 <pre>
+12.19.2013 - Fixed up pagination
+           - confgured kaminari
+           - Added post exceprpt to posts
+           - Truncated page content to create excerpt
+           - strip html tags from excerpts
+
 12.16.2013 - Configured paperclip
            - Added featured images, thumbnails, and medium sized images for posts
 
